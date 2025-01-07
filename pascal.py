@@ -1,10 +1,10 @@
+import sys
+
 def factorial(n):
     if n==0:
         return 1
     else:
         return n*factorial(n-1)
-
-
 
 def pascal(n):
     for i in range(n):
@@ -16,4 +16,9 @@ def pascal(n):
             print(i_choose_j, end=" ")
         print("\n")
 
-pascal(3)
+# accept number of lines from command line argument
+if len(sys.argv) != 2:
+    print("Enter python pascal.py <number_of_lines>")
+    sys.exit(1)
+num_lines = int(sys.argv[1])
+pascal(num_lines)
